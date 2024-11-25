@@ -1,14 +1,23 @@
 package views;
 
+import controllers.ProfessorController;
+import models.Professor;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class CadastroProfessorView extends JFrame {
 
+    private final ProfessorController controller;
+    private JComboBox<String> comboDisciplinas; // ComboBox para as disciplinas
+
     public CadastroProfessorView() {
+        controller = new ProfessorController(); // Inicializa o controller
+
         // Configurações iniciais da janela
         setTitle("Cadastro de Professor");
-        setSize(500, 350);
+        setSize(500, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -38,6 +47,11 @@ public class CadastroProfessorView extends JFrame {
         JTextField campoTelefone = new JTextField(15);
         campoTelefone.setFont(new Font("Arial", Font.PLAIN, 14));
 
+        JLabel labelDisciplina = new JLabel("Disciplina:");
+        labelDisciplina.setFont(new Font("Arial", Font.BOLD, 14));
+        comboDisciplinas = new JComboBox<>(getDisciplinasFromDatabase().toArray(new String[0]));
+        comboDisciplinas.setFont(new Font("Arial", Font.PLAIN, 14));
+
         // Botão de Salvar
         JButton botaoSalvar = new JButton("Salvar");
         botaoSalvar.setFont(new Font("Arial", Font.BOLD, 14));
@@ -47,18 +61,31 @@ public class CadastroProfessorView extends JFrame {
         botaoSalvar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         botaoSalvar.setPreferredSize(new Dimension(120, 40));
 
-        // Definir a ação do botão salvar
         botaoSalvar.addActionListener(e -> {
-            // Lógica de salvar no banco de dados (não implementada aqui)
-            JOptionPane.showMessageDialog(this, "Professor cadastrado com sucesso!");
-            dispose(); // Fecha a tela após salvar
+            // Criando o objeto Professor a partir dos campos
+            Professor professor = new Professor(
+                    campoNome.getText(),
+                    campoFormacao.getText(),
+                    campoEndereco.getText(),
+                    campoTelefone.getText(),
+                    (String) comboDisciplinas.getSelectedItem() // Obtém a disciplina selecionada
+            );
+
+            // Chamando o método do controller para salvar
+            boolean sucesso = controller.salvarProfessor(professor);
+
+            if (sucesso) {
+                JOptionPane.showMessageDialog(this, "Professor cadastrado com sucesso!");
+                dispose(); // Fecha a tela
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao cadastrar professor.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
         // Definindo as conexões do GroupLayout para os componentes
         layout.setAutoCreateGaps(true);
         layout.setAutoCreateContainerGaps(true);
 
-        // Configuração do alinhamento
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -66,12 +93,14 @@ public class CadastroProfessorView extends JFrame {
                                         .addComponent(labelNome)
                                         .addComponent(labelFormacao)
                                         .addComponent(labelEndereco)
-                                        .addComponent(labelTelefone))
+                                        .addComponent(labelTelefone)
+                                        .addComponent(labelDisciplina))
                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addComponent(campoNome)
                                         .addComponent(campoFormacao)
                                         .addComponent(campoEndereco)
                                         .addComponent(campoTelefone)
+                                        .addComponent(comboDisciplinas)
                                         .addComponent(botaoSalvar))
                         )
         );
@@ -90,6 +119,9 @@ public class CadastroProfessorView extends JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(labelTelefone)
                                 .addComponent(campoTelefone))
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelDisciplina)
+                                .addComponent(comboDisciplinas))
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
                                 .addComponent(botaoSalvar)
                         )
@@ -98,5 +130,9 @@ public class CadastroProfessorView extends JFrame {
         // Adicionando o painel principal à janela
         add(painelPrincipal);
         setVisible(true);
+    }
+
+    private List<String> getDisciplinasFromDatabase() {
+        return controller.getDisciplinas(); // Obtém as disciplinas do banco por meio do controller
     }
 }
