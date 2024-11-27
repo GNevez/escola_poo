@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ProfessorDAO {
 
-    // Método para salvar o professor no banco de dados
     public static boolean salvarProfessor(Professor professor) {
         String sqlProfessor = "INSERT INTO professores (nome, formacao, endereco, telefone, departamento_id) VALUES (?, ?, ?, ?, ?)";
         String sqlRelacao = "INSERT INTO professor_disciplina (professor_id, disciplina_id) VALUES (?, ?)";
@@ -24,11 +23,9 @@ public class ProfessorDAO {
         ResultSet rsDisciplinaId = null;
 
         try {
-            // Conexão com o banco de dados
             conn = ConexaoDB.getConnection();
-            conn.setAutoCommit(false); // Inicia uma transação
+            conn.setAutoCommit(false); 
 
-            // Busca o ID da disciplina
             stmtBuscaDisciplinaId = conn.prepareStatement(sqlBuscaDisciplinaId);
             stmtBuscaDisciplinaId.setString(1, professor.getDisciplina());
             rsDisciplinaId = stmtBuscaDisciplinaId.executeQuery();

@@ -11,7 +11,7 @@ public class CursoDAO {
     public List<Curso> listarCursos() {
         List<Curso> cursos = new ArrayList<>();
 
-        String sql = "SELECT * FROM cursos"; // Supondo que a tabela se chame "cursos"
+        String sql = "SELECT * FROM cursos"; 
 
         try (Connection conexao = ConexaoDB.getConnection();
              Statement stmt = conexao.createStatement();
