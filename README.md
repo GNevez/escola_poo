@@ -6,7 +6,7 @@ Este projeto foi desenvolvido para facilitar a gestão acadêmica de uma escola.
 O objetivo deste software é oferecer uma plataforma prática e eficiente para gerenciar as informações acadêmicas da escola. Com ele, é possível cadastrar, editar e consultar dados de alunos, professores, cursos, disciplinas e departamentos de forma simples e organizada. A ideia é tornar o dia a dia da gestão escolar mais fácil e produtivo.
 
 # 3. Requisitos do Sistema
-- 3.1 Requisitos Funcionais
+- 3.1 Requisitos Funcionais:
 - Cadastro de Professores: O sistema deve permitir o cadastro de professores, incluindo informações como nome, formação, endereço e telefone.
 
 - Cadastro de Alunos: O sistema deve permitir o cadastro de alunos, incluindo matrícula, nome, endereço, telefone, filiação e data de nascimento.
@@ -24,7 +24,7 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
   Uma mesma disciplina pode constar no currículo de diversos cursos.
   Um professor pertence a um departamento e pode lecionar em diversas disciplinas.
 
-- 3.2 Requisitos Não Funcionais
+- 3.2 Requisitos Não Funcionais:
 - Usabilidade: O sistema deve ser intuitivo e fácil de usar, permitindo que usuários com conhecimentos básicos de informática possam operar sem dificuldades.
 
 - Desempenho: O sistema deve ser capaz de processar as operações de cadastro e consulta de forma rápida e eficiente.
@@ -86,5 +86,6 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
 Linguagem de Programação: Java
 Banco de Dados: MySQL
 Interface Gráfica: Swing (para a construção da interface do usuário)
+
 # 7. Conclusão
-O software de gerenciamento acadêmico desenvolvido para a escola bilíngue atende aos requisitos levantados, proporcionando uma solução eficaz para a administração das informações acadêmicas. Com a implementação deste sistema, espera-se facilitar a gestão de alunos, professores, cursos, disciplinas e departamentos, contribuindo para um ambiente escolar mais organizado e eficiente.
+Este software de gerenciamento acadêmico foi criado para atender às necessidades específicas da escola, oferecendo uma solução prática e eficiente para administrar as informações acadêmicas. Com sua implementação, buscamos tornar mais simples o gerenciamento de alunos, professores, cursos, disciplinas e departamentos, contribuindo para um ambiente escolar mais organizado, funcional e produtivo.
