@@ -1,6 +1,7 @@
 package dao;
 
 import models.Curso;
+import models.CursoInsert;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -30,5 +31,23 @@ public class CursoDAO {
         }
 
         return cursos;
+    }
+
+    public boolean inserirCurso(CursoInsert curso) {
+        String sql = "INSERT INTO cursos (nome, sigla) VALUES (?, ?)";
+
+        try (Connection conexao = ConexaoDB.getConnection();
+             PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, curso.getNome());
+            stmt.setString(2, curso.getSigla());
+//            stmt.setInt(3, curso.getIdDisciplina());
+
+            int linhasAfetadas = stmt.executeUpdate();
+            return linhasAfetadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

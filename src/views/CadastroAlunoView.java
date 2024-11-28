@@ -18,53 +18,58 @@ public class CadastroAlunoView extends JFrame {
 
     public CadastroAlunoView() {
         setTitle("Cadastro de Aluno");
-        setSize(400, 350);
+        setSize(500, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
-        setLayout(new FlowLayout());
+        setLayout(new GridBagLayout()); // Usando GridBagLayout para melhor organização
 
-        // Criando os componentes da interface
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.weightx = 1;
+        gbc.gridwidth = 1;
+
+        // Adicionando os componentes à interface com GridBagLayout
         JLabel labelNome = new JLabel("Nome:");
         campoNome = new JTextField(20);
+        addComponent(labelNome, campoNome, 0, gbc);
 
         JLabel labelEndereco = new JLabel("Endereço:");
         campoEndereco = new JTextField(20);
+        addComponent(labelEndereco, campoEndereco, 1, gbc);
 
         JLabel labelTelefone = new JLabel("Telefone:");
         campoTelefone = new JTextField(15);
+        addComponent(labelTelefone, campoTelefone, 2, gbc);
 
-        JLabel labelFiliacao = new JLabel("Filiacao:");
+        JLabel labelFiliacao = new JLabel("Filiação:");
         campoFiliacao = new JTextField(20);
+        addComponent(labelFiliacao, campoFiliacao, 3, gbc);
 
         JLabel labelDataNascimento = new JLabel("Data de Nascimento:");
         campoDataNascimento = new JTextField(10);
+        addComponent(labelDataNascimento, campoDataNascimento, 4, gbc);
 
         JLabel labelCurso = new JLabel("Curso:");
         comboBoxCursos = new JComboBox<>();
+        addComponent(labelCurso, comboBoxCursos, 5, gbc);
 
+        // Botão Salvar
         botaoSalvar = new JButton("Salvar");
+        botaoSalvar.setBackground(new Color(34, 139, 34));
+        botaoSalvar.setForeground(Color.WHITE);
+        botaoSalvar.setFocusPainted(false);
+        botaoSalvar.setFont(new Font("Arial", Font.BOLD, 14));
 
-        // Adicionando os componentes ao layout
-        add(labelNome);
-        add(campoNome);
-        add(labelEndereco);
-        add(campoEndereco);
-        add(labelTelefone);
-        add(campoTelefone);
-        add(labelFiliacao);
-        add(campoFiliacao);
-        add(labelDataNascimento);
-        add(campoDataNascimento);
-        add(labelCurso);
-        add(comboBoxCursos);
-        add(botaoSalvar);
+        gbc.gridy = 6;
+        gbc.gridwidth = 2; // O botão ocupa duas colunas
+        gbc.anchor = GridBagConstraints.CENTER;
+        add(botaoSalvar, gbc);
 
-        // Carregar os cursos no combo box
         carregarCursos();
 
-        // Evento para salvar os dados do aluno
         botaoSalvar.addActionListener(e -> {
-            // Aqui, instanciamos o controller para gerenciar o processo de cadastro
             CadastroAlunoController cadastroAlunoController = new CadastroAlunoController(this);
             cadastroAlunoController.cadastrarAluno();
         });
@@ -72,13 +77,17 @@ public class CadastroAlunoView extends JFrame {
         setVisible(true);
     }
 
-    // Carrega os cursos no combo box
+    private void addComponent(JLabel label, JComponent component, int y, GridBagConstraints gbc) {
+        gbc.gridy = y;
+        gbc.gridx = 0;
+        add(label, gbc);
+        gbc.gridx = 1;
+        add(component, gbc);
+    }
+
     public void carregarCursos() {
-        // Aqui, vamos chamar o método do controller para pegar os cursos disponíveis no banco
         CadastroAlunoController cadastroAlunoController = new CadastroAlunoController(this);
         List<Curso> cursos = cadastroAlunoController.buscarCursos();
-
-        // Preencher o combo box com os cursos
         for (Curso curso : cursos) {
             comboBoxCursos.addItem(curso);
         }

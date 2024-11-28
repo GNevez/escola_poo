@@ -7,8 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.sql.*;
 
-import views.CadastroProfessorView;
-import views.CadastroAlunoView;
+import views.*;
 
 public class EscolaController {
 
@@ -69,6 +68,10 @@ public class EscolaController {
     // Método para abrir a tela de cadastro de Aluno
     public void abrirTelaCadastroAluno() {
         new CadastroAlunoView();
+    }
+
+    public void abrirTelaCadastroCurso() {
+        new CadastroCursoView();
     }
 }
 
