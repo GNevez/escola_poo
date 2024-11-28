@@ -32,50 +32,59 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
 - Segurança: O sistema deve garantir a segurança dos dados armazenados, implementando medidas de proteção contra acesso não autorizado.
 
 # 4. Modelagem do Banco de Dados
-O banco de dados é projetado para armazenar as informações necessárias conforme os requisitos levantados. A seguir, estão as entidades e seus atributos:
+  O banco de dados é projetado para armazenar as informações necessárias conforme os requisitos levantados. A seguir, estão as entidades e seus atributos:
 
 - 4.1 Entidades e Atributos
-Professores
+  Professores
 
-Código (identificador único)
-Nome
-Formação
-Endereço
-Telefone
-Cursos
+  Código (identificador único)
+  Nome
+  Formação
+  Endereço
+  Telefone
+  Cursos
 
-Código (identificador único)
-Nome
-Sigla
-Disciplinas
+  Código (identificador único)
+  Nome
+  Sigla
+  Disciplinas
 
-Código (identificador único)
-Denominação
-Sigla
-Ementa
-Código do Departamento (chave estrangeira)
-Departamentos
+  Código (identificador único)
+  Denominação
+  Sigla
+  Ementa
+  Código do Departamento (chave estrangeira)
+  Departamentos
 
-Código (identificador único)
-Denominação
-Alunos
+  Código (identificador único)
+  Denominação
+  Alunos
 
-Matrícula (identificador único)
-Nome
-Endereço
-Telefone
-Filiação
-Data de Nascimento
-Código do Curso (chave estrangeira)
+  Matrícula (identificador único)
+  Nome
+  Endereço
+  Telefone
+  Filiação
+  Data de Nascimento
+  Código do Curso (chave estrangeira)
+
+- 4.2 Modelo Lógico do Bnaco de Dados:
+![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/modelo_logico.jpg)
+
+
+
 # 5. Diagramas
 - 5.1 Diagrama de Caso de Uso:
 ![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/diagrama_caso_de_uso.jpg.jpg)
 
+- 5.2 Diagrama de Classe:
+  
+![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/diagrama_de_classe.png)
 
 
-6. Tecnologias Utilizadas
+# 6. Tecnologias Utilizadas
 Linguagem de Programação: Java
 Banco de Dados: MySQL
 Interface Gráfica: Swing (para a construção da interface do usuário)
-7. Conclusão
+# 7. Conclusão
 O software de gerenciamento acadêmico desenvolvido para a escola bilíngue atende aos requisitos levantados, proporcionando uma solução eficaz para a administração das informações acadêmicas. Com a implementação deste sistema, espera-se facilitar a gestão de alunos, professores, cursos, disciplinas e departamentos, contribuindo para um ambiente escolar mais organizado e eficiente.
