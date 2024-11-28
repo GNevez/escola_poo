@@ -85,9 +85,9 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
 
 
 # 6. Tecnologias Utilizadas
-Linguagem de Programação: Java
-Banco de Dados: MySQL
-Interface Gráfica: Swing (para a construção da interface do usuário)
+- Linguagem de Programação: Java
+- Banco de Dados: MySQL
+- Interface Gráfica: Swing (para a construção da interface do usuário)
 
 # 7. Conclusão
 Este software de gerenciamento acadêmico foi criado para atender às necessidades específicas da escola, oferecendo uma solução prática e eficiente para administrar as informações acadêmicas. Com sua implementação, buscamos tornar mais simples o gerenciamento de alunos, professores, cursos, disciplinas e departamentos, contribuindo para um ambiente escolar mais organizado, funcional e produtivo.
