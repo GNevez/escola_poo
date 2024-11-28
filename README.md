@@ -13,10 +13,6 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
 
 - Cadastro de Cursos: O sistema deve permitir o cadastro de cursos, incluindo código, nome e sigla.
 
-- Cadastro de Disciplinas: O sistema deve permitir o cadastro de disciplinas, incluindo código, denominação, sigla e ementa.
-
-- Cadastro de Departamentos: O sistema deve permitir o cadastro de departamentos, incluindo código e denominação.
-
 - Relacionamentos:
   Um departamento pode oferecer diversas disciplinas.
   Uma disciplina pertence a um único departamento.
