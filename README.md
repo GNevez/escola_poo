@@ -68,7 +68,7 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
   Data de Nascimento
   Código do Curso (chave estrangeira)
 
-- 4.2 Modelo Lógico do Bnaco de Dados:
+- 4.2 Modelo Lógico do Bando de Dados:
   
 ![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/modelo_logico.jpg)
 
