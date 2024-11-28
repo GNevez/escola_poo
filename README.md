@@ -69,7 +69,7 @@ Data de Nascimento
 Código do Curso (chave estrangeira)
 # 5. Diagramas
 - 5.1 Diagrama de Caso de Uso:
-![Diagrama de Caso de Uso](diagrama_caso_uso.jpg)
+![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/diagrama_caso_de_uso.jpg.jpg)
 
 
 
