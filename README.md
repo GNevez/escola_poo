@@ -69,12 +69,14 @@ O objetivo deste software é oferecer uma plataforma prática e eficiente para g
   Código do Curso (chave estrangeira)
 
 - 4.2 Modelo Lógico do Bnaco de Dados:
+  
 ![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/modelo_logico.jpg)
 
 
 
 # 5. Diagramas
 - 5.1 Diagrama de Caso de Uso:
+  
 ![Diagrama de Caso de Uso](https://github.com/GNevez/escola_poo/blob/main/diagrama_caso_de_uso.jpg.jpg)
 
 - 5.2 Diagrama de Classe:
